@@ -1,0 +1,1089 @@
+/*********************************************************************************
+**  Author: JBar87
+**  Date:	March 29, 2015
+**  Ver.:	1.10 alpha
+**
+**  Github: https://github.com/JBar87
+**  Reddit: /u/RebootThis
+**
+**  -----------------------
+**  Description:
+**	    This is a reddit theme/skin. Originally created for /r/OSUOnlineCS.
+**
+**	License: 
+**      The MIT License (MIT)
+**      Copyright (c) 2015 JBar87
+**
+**      Permission is hereby granted, free of charge, to any person obtaining a copy
+**      of this software and associated documentation files (the "Software"), to deal
+**      in the Software without restriction, including without limitation the rights
+**      to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+**      copies of the Software, and to permit persons to whom the Software is
+**      furnished to do so, subject to the following conditions:
+**
+**      The above copyright notice and this permission notice shall be included in all
+**      copies or substantial portions of the Software.
+**
+**      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+**      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+**      FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+**      AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+**      LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+**      OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+**      SOFTWARE.
+*********************************************************************************/
+
+/********************************************************************************************** 
+** General Body and General Formatting
+**********************************************************************************************/
+
+/* default formatting for common elements */
+    .link, .side, .submit-page .infobar, .roundfield, 
+    .submit-page .content button, .content.submit .info-notice, 
+    .stylesheet-customize-container .pretty-form, #images, 
+    .search-page .raisedbox, .search-page .searchfacets, 
+    .linefield, .search-page, .searchpane, .nextprev {
+        border: 0px;
+        background-color: white;
+
+        /* Font Family and color*/
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: normal;
+        color: black;
+    }
+
+/* default formatting for RES nightmode elements */
+    .res-nightmode .sidebox, .res-nightmode .subredditbox, 
+    .res-nightmode .subreddit-info, .res-nightmode .raisedbox, 
+    .res-nightmode .login-form-side, .res-nightmode .sidecontentbox {
+        background-color: #222;
+        border-color: rgb(21, 21, 21);
+        color: rgb(170, 170, 170);
+    }
+
+    .res-nightmode .RES-keyNav-activeElement, 
+    .res-nightmode .RES-keyNav-activeElement .usertext-body, 
+    .res-nightmode .RES-keyNav-activeElement .usertext-body .md, 
+    .res-nightmode .RES-keyNav-activeElement .usertext-body .md p, 
+    .res-nightmode .commentarea .RES-keyNav-activeElement .noncollapsed, 
+    .res-nightmode .RES-keyNav-activeElement .noncollapsed .md, 
+    .res-nightmode .RES-keyNav-activeElement .noncollapsed .md p {
+        background-color: #161616 !important;
+        color: #DDDDDD !important;
+    }
+    
+body {
+    background-color: white;
+    background-repeat: repeat;
+}
+.res-nightmode body {
+    background-color: #2D3035;
+}
+
+/* This is the container of all the post in the home page */
+.content[role=main]{
+    overflow: hidden;
+    padding: 15px; 
+    margin-left: 15px;
+    margin-bottom: 50px;
+    margin-right: 320px;  /* width size of side bar + 20px; important! */
+}
+
+
+/************************************************************************
+**  Everything in the Header
+*************************************************************************/
+#header {
+    position: relative;
+    color: white;
+    
+    background-color: transparent;
+	background-image: url(%%bg-big1b%%);
+    
+    height: 190px;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+.res-nightmode #header {
+    position: relative;
+    color: white;
+    
+    background-color: transparent;
+    background-image: url(%%bg-big1e%%);  /*nightmode header*/
+    
+    height: 190px;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Reddit's subreddit bar */
+    .sr-list {
+        background-color: white;
+        opacity: .3;
+    }
+    .sr-list:hover {
+        background-color: white;
+        opacity: 1;
+    }
+    .sr-list a {
+        color: black;
+    }
+    .sr-list a:hover{
+        color: #FC700C;
+    }
+
+/* Position of Header Name and Tab Menu */
+    #header-bottom-left{
+        position: absolute;
+        left: 20px;
+        bottom: 0px;
+    }
+
+/* Header's image (default Reddit alien) */
+    #header-img {
+        height: 64px;
+        width: 64px;
+    }
+
+/* Header's Subreddit Name Formatting */ 
+    .pagename a {
+        color: #FFFFFF;
+        font-size: 25px;
+    }
+    .pagename a:hover {
+        color: #FFFFFF;
+        text-decoration:none;
+    }
+
+/* Header Tab Menu Formatting */
+    .tabmenu {
+        position: relative;
+        left: 35px;
+        bottom: 0;
+        border: 0px;
+    }
+
+    #header .tabmenu a {
+        background-color: transparent;
+        color: white;
+        font-size: 10px;
+        border: 0px;
+        text-transform: uppercase;
+    }
+
+    #header .tabmenu li.selected a{
+        color: #FC700C  ;
+        text-decoration: underline;
+        border: 0px;
+    }
+
+    #header .tabmenu a:hover {
+        background-color: #96bf43;
+        color: #fff;
+        border: 0px;
+    }
+
+/* Header right tab menu 'username', 'preference' etc..*/
+    #header-bottom-right{
+        width: 292px;
+        height: 28px;
+        margin-right: 5px;
+        background-color: white;
+
+        border-radius: 10px 0px 0px 0px;
+        -moz-border-radius: 10px 0px 0px 0px;
+        -webkit-border-radius: 10px 0px 0px 0px;
+        border-left: 2px solid #e5e5e5 !important;
+        border-right: 2px solid #e5e5e5 !important;
+        border-top: 2px solid #e5e5e5 !important
+    }
+
+    .res #header-bottom-right{
+        top: 151px;
+        height: 28px;
+        font-size: 9px !important;
+        line-height: 0px;
+
+        border-left: 2px solid #e5e5e5 !important;
+        border-right: 2px solid #e5e5e5 !important;
+        border-top: 2px solid #e5e5e5 !important
+    }
+
+    /* Modification for RES */
+    .res-nightmode #header-bottom-right{
+        background-color: #222;
+        top: 151px;
+        height: 28px;
+        font-size: 9px !important;
+        line-height: 0px;
+
+        border-left: 2px solid #222!important;
+        border-right: 2px solid #222!important;
+        border-top: 2px solid #222!important
+    }
+    .res #userbarToggle {
+        position: absolute;
+        height: 25px;
+        width: 16px;
+
+        top: 7px;
+        left: -25px;
+        padding-left: 4px;
+        font-size: 15px;
+        color: #a1bcd6;
+
+        display: inline-block;
+        background-color: whitesmoke;
+        cursor: pointer;
+        text-align: center;
+        line-height: 23px;
+
+
+        border: 0px;
+        border-radius: 7px 0px 0px 7px;
+        -moz-border-radius: 7px 0px 0px 7px;
+        -webkit-border-radius: 7px 0px 0px 7px;
+    }
+
+    .res-nightmode #userbarToggle {
+        background-color: #222;
+        color: white;
+        border: 0px;
+    }
+
+
+/********************************************************************************************** 
+**  Listing Page Stuff / Main Page
+**********************************************************************************************/
+
+/* main page's content box. This holds listings of posts */
+    .listing-page .content[role=main] {
+        background-color: transparent;
+        padding: 0px;
+
+        border: 1px solid #e5e5e5 ;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -webkit-box-shadow: 0px 0px 49px 0px rgba(209,209,209,1);
+        -moz-box-shadow: 0px 0px 49px 0px rgba(209,209,209,1);
+        box-shadow: 0px 0px 49px 0px rgba(209,209,209,1);
+    }
+
+    .res-nightmode .listing-page .content[role=main] {
+        background-color: transparent;
+        padding: 0px;
+        
+        border: 0px solid #757968;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -webkit-box-shadow: 0px 0px 0px 0px rgba(209,209,209,1);
+        -moz-box-shadow: 0px 0px 0px 0px rgba(209,209,209,1);
+        box-shadow: 0px 0px 0px 0px rgba(209,209,209,1);
+    }
+
+
+
+/* This is the container of all the post link inside the .content */
+    .listing-page .content[role=main] #siteTable {
+        border: 0px solid #e5e5e5 ;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        
+        background-color: white;
+        padding: 15px 15px 15px 15px;
+    }
+    .res-nightmode .listing-page .content[role=main] #siteTable {
+        border: 0px solid #2D3035;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        
+        background-color: #222222;
+        padding: 15px 15px 15px 15px;
+    }
+
+
+
+/* This is the container for the actual link of the comment */
+    .listing-page .content[role=main] .entry { 
+        background-color: transparent;
+        padding: 8px 20px 5px 5px;
+    }
+
+
+/* This is the container of the up/down votes */
+    .listing-page .content[role=main] .link .midcol {
+        font-weight: bold;
+        padding: 8px 0px 5px 0px;  /*match the .entry padding for top and bottom*/
+    }
+
+/* This colors alternating post */
+    .listing-page .content[role=main] .link.odd {
+        background: whitesmoke;
+    }
+
+    .listing-page .content[role=main] .link.even {
+        background: white;
+    }
+    
+    .res-nightmode .listing-page .content[role=main] .link.odd {
+        background: transparent;
+    }
+
+    .res-nightmode .listing-page .content[role=main] .link.even {
+        background: transparent;
+    }
+
+/* This give color border to the link being hovered */
+    .listing-page .content[role=main] .link:hover{
+        border-left: 5px solid orange!important;
+    }
+
+/* This is the rank of the post */
+    .listing-page .content[role=main] .link .rank {
+        margin-top: 24px;
+        color: #c6c6c6;
+        font-family: arial;
+        font-size: 13px;
+        text-align: right;
+    }
+
+    
+/*************************************************************************
+** Everything in the Comment/Post Page
+************************************************************************/
+
+/* This is the container for all comments and the comment form*/
+    .single-page.comments-page .content[role=main] {
+        background-color: white;
+        border: 1px solid #e5e5e5 ;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+
+        -webkit-box-shadow: 0px 0px 49px 0px rgba(209,209,209,1);
+        -moz-box-shadow: 0px 0px 49px 0px rgba(209,209,209,1);
+        box-shadow: 0px 0px 49px 0px rgba(209,209,209,1);
+    }
+
+    .res-nightmode .single-page.comments-page .content[role=main] {
+        background-color: #222;
+        border: 0px solid #e5e5e5 ;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+
+        -webkit-box-shadow: 0px 0px 0px 0px rgba(209,209,209,1);
+        -moz-box-shadow: 0px 0px 0px 0px rgba(209,209,209,1);
+        box-shadow: 0px 0px 0px 0px rgba(209,209,209,1);
+    }
+
+/* OP's post at top of comment page */
+    .single-page.comments-page .content[role=main]  #siteTable.sitetable.linklisting .link{
+        background-color: whitesmoke;
+        padding: 10px;
+        margin-right: 25px;
+
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+    }
+
+    .res-nightmode .single-page.comments-page .content[role=main]  #siteTable.sitetable.linklisting .link{
+        background-color: #161616;
+        padding: 10px;
+        margin-right: 25px;
+
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+    }
+
+    .single-page.comments-page .content[role=main]  #siteTable.sitetable.linklisting .link .usertext-body .md {
+        background-color: transparent;
+        text-align: justify !important;
+        border: 0px;
+        border-radius: 0px; 
+    }
+
+    .res-nightmode .single-page.comments-page .content[role=main]  #siteTable.sitetable.linklisting .link .usertext-body .md {
+        background-color: transparent;
+        text-align: justify !important;
+        border: 0px;
+        border-radius: 0px; 
+    }
+
+/* This is the box containining all the comments from users */
+    .commentarea {
+        padding: 15px;
+        background-color: transparent;
+        border: 0;
+    }
+
+/* This is the user comment post box area */
+    .panestack-title .title {
+        font-size: 13px !important;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: 0;
+    }
+
+    .commentarea .menuarea {
+        padding: 0;
+        color: gray;
+        width: 100%;
+    }
+
+/* User Text Area for commenting */
+    .commentarea > .usertext textarea { 
+        /* Put a warning inside the text area */
+        background-image: url(%%comment-warning%%); 
+        background-repeat: no-repeat;
+        background-position: center center;
+        opacity: .5;
+        width: 100%;
+    }
+
+    .commentarea > .usertext textarea:focus { 
+        background-image: none;
+        opacity: 1;
+    }
+    
+    /* Add stuff after the text area but before the comment posts*/
+    .commentarea > .usertext:after {
+        content: "";
+    }
+
+
+    .usertext .help-toggle, .usertext .bottom-area .reddiquette {
+        background-color: whitesmoke;
+        border: 1px solid #AAA;
+        padding:3px;
+        margin:5px 3px;
+        border-radius: 0;
+    }
+
+    .usertext-buttons .save {
+        background-color: whitesmoke;
+        border: 1px solid #AAA;
+        padding:3px;
+        margin:5px 3px;
+        border-radius: 0;
+    }
+
+/* Justify all comment text */
+    .commentarea .md {
+        text-align: justify !important;
+    }
+
+/* Formatting of block quotes */
+    blockquote {
+        display: block;
+        border: 0 !important;
+        border-left: 3px solid #C7C7C7!important;
+        font-style: italic;
+        color: #B3B3B3 !important;
+    }
+
+
+/*****************************************************************************************
+**  Everything in the  Side Bar
+******************************************************************************************/
+
+/* This is the container for the side bar */
+    .side {
+        background-color: white;
+        border-left: 2px solid #e5e5e5 !important;
+        border-right: 2px solid #e5e5e5 !important;
+        border-bottom-left-radius: 5px !important;
+        border-bottom-right-radius: 5px !important;
+
+        -webkit-box-shadow: 0px 0px 49px 0px rgba(209,209,209,1);
+        -moz-box-shadow: 0px 0px 49px 0px rgba(209,209,209,1);
+        box-shadow: 0px 0px 49px 0px rgba(209,209,209,1);
+    }
+
+    .res-nightmode .side {
+        background-color: #222;
+        border: 2px solid #222 !important;
+        border-bottom-left-radius: 5px !important;
+        border-bottom-right-radius: 5px !important;
+
+        -webkit-box-shadow: 0px 0px 0px 0px rgba(209,209,209,1);
+        -moz-box-shadow: 0px 0px 0px 0px rgba(209,209,209,1);
+        box-shadow: 0px 0px 0px 0px rgba(209,209,209,1);
+    }
+
+
+/* The login box */
+    .side .login-form-side {
+        background-color: #FAFAFA;
+        margin: 5px;
+        border:1px solid #eaeaea !important;
+        padding: 3px;
+    }
+
+    .single-page .comments-page .side .login-form-side {
+        background-color: #FAFAFA;
+        margin: 5px;
+        border:1px solid #eaeaea !important;
+        padding: 3px;
+    }
+
+    .login-form-side input[type="text"], 
+    .login-form-side input[type="password"]{
+        background-color: white;
+        width: 133px;
+        border: 1px solid #eaeaea;
+    }
+
+    .login-form-side .submit *, 
+    .user-form .submit * {
+        vertical-align: middle;
+        background-color: whitesmoke;
+        border: 1px solid orange;
+        font-size: 11px;
+        color: black;
+    }
+
+    .login-form-side #remember-me {
+        float: left;
+        line-height: 24px;
+        margin-left: 5px;
+}
+
+
+/* The button for Submissions Restricted */
+    .disabled .morelink a {
+        cursor: default;
+        background-color: inherit;
+        font-size: 12px;
+    }
+
+/* The text underneath the Submission Button */
+    .sidebox .subtitle {
+        margin-left: 10px;
+        color: #696969;
+        font-size: 110%;
+    }
+
+/* This is the container for entries made in 'subreddit settings' */
+    .titlebox {
+        background-color: whitesmoke;
+        border: 0px solid red;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+
+        padding: 10px 5px 10px 5px;
+        margin: 5px 5px 5px 5px;
+    }
+
+/* search */
+    .side #search {
+        border:1px solid #eaeaea;
+        padding:5px;
+        background-color:#FAFAFA;
+        margin: 5px;
+    }
+
+    #search input[type=text] {
+        width:278px;
+        border:1px solid #DBDADA;
+        font-size:12px;
+        font-style:italic;
+        padding:4px;
+    }
+
+
+/*** Submit Link/Text Post Formatting ***/
+    /*  Remove Arrow nub  */
+    .nub { display: none; }
+
+    .sidebox.submit .morelink {
+        background: #96bf43;
+        border: 0px solid #AAA;  
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        margin: 5px;
+
+    }
+
+    .sidebox.submit .morelink a {
+        color: black;
+        border: 0px solid #AAA;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px
+    }
+
+    .sidebox.submit .morelink:hover {
+        background: #FC700C  ;
+        border: 0px solid #AAA;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px
+    }
+
+/* Information About the Sub */
+    .linkinfo {
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #5f99cf;
+        background-color: #EFF7FF;
+        font-family: arial,helvetica,sans-serif;
+        font-size: larger;
+        border-radius: 3px;
+    }
+
+    .titlebox form.toggle, .leavemoderator {
+        margin: 0;
+        padding: 5px 0px;
+        font-size: smaller;
+        color: gray;
+        background-color: transparent;
+    }
+
+/* Sidebar SubReddit's Name */
+    .titlebox h1 a {
+        color: black;
+        font-size: 25px;
+    }
+    .titlebox h1 a:hover {
+        color: #FC700C  ;
+        text-decoration:none;
+    }
+
+/* This is the container for Moderation Tools, Moderators and Recently Viewed Links */
+    .sidecontentbox {
+        position: relative;
+        background-color: white;
+        border: 0px;
+        padding-right: 10px;
+        padding-left: 10px;
+        overflow: auto;
+    }
+
+    .sidecontentbox .content{
+        background-color: white;
+        border: 0px;
+        -moz-border-radius: 0px;
+        -webkit-border-radius: 0px;
+        border: 1px dotted #e5e5e5;
+        border-top: 5px solid #e5e5e5;
+    }
+
+    .sidecontentbox .content a{
+        background-color: transparent;
+    }
+
+    .side .bottom {
+        width: 270px;
+        padding: 0px;
+        overflow: hidden;
+    }
+
+/* This is the Moderation Tools container */
+    .icon-menu {
+        background-color: transparent;
+        padding: 0px 0px 0px 5px;
+    }
+
+/* This is the ad container */
+    #ad-frame, #ad_main {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 2px solid #e5e5e5 !important;
+        border-top: 2px solid #e5e5e5 !important;
+        border-radius: 5px;
+    }
+
+/*** Change "readers" and "users online" ***/
+    .titlebox .word { display: none; }
+    .subscribers .number:after { content: ' members'; }
+    .users-online .number:after { content: ' users online'; }
+
+/**********Subscribe Button***********/
+    .fancy-toggle-button .add {
+        background: none;
+        background-color: Green;
+    }
+
+/**********UN-Subscribe Button********/
+    .fancy-toggle-button .remove {
+        background: none;
+        background-color: #FC700C;
+    }
+
+/***** Sidebar headings Formatting *****/
+    .titlebox {
+        padding: 10px;
+        background: transperant;
+        border: 1px solid #AAA;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px
+    }
+
+    .titlebox .md h3 {
+        background-color: #96bf43;
+        color: #fff; 
+
+        line-height: 23px;
+        font-weight: normal;
+        font-size: 16px;
+        padding-left: 20px;
+        margin-top: 4px;
+        margin-left: -11px;
+    }
+
+    .titlebox .md h2 {
+        background-color: #FC700C;  
+        color: #fff;
+        /*width: 280px;*/
+        line-height: 23px;
+        font-weight: normal;
+        font-size: 16px;
+        padding-left: 20px;
+        margin-top: 4px;
+    }
+
+/* Credits */
+    .side .titlebox .bottom::after {
+        margin-top: 5px;
+        display: block;
+        content:"themed by u/RebootThis";
+        color: gray;
+    }
+    
+/**************************************************************************************
+** Everything in the Footer
+**************************************************************************************/
+
+/* The footer table in every page */
+    .footer-parent {
+        background-color: transparent;
+        font-size: larger;
+        padding-top: 40px;
+        clear: both;
+        text-align: center;
+    }
+
+    .footer {
+        background-color: transparent;
+        color: gray;
+        padding: 5px;
+        margin: 15px auto;
+        border: 1px solid #F0F0F0;
+        display: flex;
+        display: -webkit-flex;
+        max-width: 600px;
+    }
+
+    .footer.rounded {
+        border-radius: 7px;
+    }
+
+    .footer-parent .bottommenu {
+        color: gray;
+        font-size: smaller;
+        clear: both;
+    }
+
+/* The very bottom of the pages */
+    .debuginfo {
+        background-color: transparent;
+        text-align: right;
+        padding: 5px;
+        color: gray;
+        font-size: smaller;
+        clear: both;
+    }
+
+    
+/***************************************************************************** 
+** Code Block numbering (adapted from /r/FlatBlue)
+******************************************************************************/
+
+.md pre {
+    background-color: #F8F8F8 !important;
+    border: 0px;
+    overflow: visible !important;
+    border-left: 31px solid #FC700C;
+    padding: 0;
+    position: relative;
+    margin-top: 25px;
+    line-height: 15px;
+    font-family: "Courier New",courier,monospace;
+}
+
+.md pre code {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    padding-left: 5px !important;
+    border: 1px dotted orange !important;
+    overflow: auto;
+    display: block;
+    line-height: 15px;
+    font-family: "Courier New",courier,monospace;
+}
+
+.md pre:before {
+    height: 100%;
+    color: white;
+    position: absolute;
+    left: -28px;
+    width: 25px;
+    white-space: pre-wrap;
+    direction: rtl;
+    overflow: hidden;
+    content: "#   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250";
+}
+
+
+/********************************************************************************* 
+** Spoiler Tag (adapted from /r/csshelp)
+**********************************************************************************/
+
+a[href="#s"],
+.md p > a[href="#s"] {
+	text-decoration: none !important;
+	cursor: default;
+	background: #000;
+	color: #fff !important;
+	display: inline-block;
+}
+
+a[href="#s"]::after,
+.md p > a[href="#s"]::after {
+	content: attr(title);
+	color: #000;
+	padding: 0 0.5em;
+	visibility: visible;
+}
+
+a[href="#s"]:hover,
+.md p > a[href="#s"]:hover {
+	color: #fff !important;
+}
+
+a[href="#s"]:hover::after,
+a[href="#s"]:active::after,
+.md p > a[href="#s"]:hover::after,
+.md p > a[href="#s"]:active::after {
+	color: #fff;
+}
+
+
+/*********************************************************************************** 
+** FLAIRS, default and customs
+************************************************************************************/
+
+/* Default Flairs */
+    .flair, .linkflairlabel {
+        display: inline-block;
+        margin-right: .5em;
+        padding: 0 2px;
+        background: #f5f5f5;
+        color: #555;
+        border: 1px solid #ddd;
+        border-radius: 2px;
+        font-size: x-small !important;
+    }
+
+/* Custom Flairs */
+    .flair-lv1-custom {
+        border: 0px;
+        color: white;
+        background-color: #085E9F;
+        padding-left: 4px;
+        width: 23px;
+        height: 12px;
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: middle;
+    }
+
+    .flair-lv2-custom {
+        border: 0px;
+        color: white;
+        background-color: #085E9F;
+        padding-left: 4px;
+        width: 24px;
+        height: 12px;
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: middle;
+    }
+
+    .flair-lv3-custom {
+        border: 0px;
+        color: white;
+        background-color: #085E9F;
+        padding-left: 4px;
+        width: 24px;
+        height: 12px;
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: middle;
+    }
+
+    .flair-lv4-custom {
+        border: 0px;
+        color: white;
+        background-color: #085E9F;
+        padding-left: 4px;
+        width: 24px;
+        height: 12px;
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: middle;
+    }
+
+    .flair-prospect-custom {
+        border: 0px;
+        color: white;
+        background-color: #1E282A;
+        padding-left: 4px;
+        width: 24px;
+        height: 12px;
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: middle;
+    }
+
+    .flair-alum-custom {
+        border: 0px;
+        color: white;
+        background-color: #974D77;
+        padding-left: 4px;
+        width: 26px;
+        height: 12px;
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: middle;
+    }
+
+/* Hover Effects */
+    .flair-lv1-custom:hover {
+        width: auto;
+    }
+    .flair-lv2-custom:hover {
+        width: auto;
+    }
+    .flair-lv3-custom:hover {
+        width: auto;
+    }
+    .flair-lv4-custom:hover {
+        width: auto;
+    }
+    .flair-prospect-custom:hover {
+        width: auto;
+    }
+    .flair-alum-custom:hover {
+        width: auto;
+    }
+
+/* flair images for sidebar */
+    a[href="#lv0"]:after { 
+        content: url(%%lv0%%);
+        cursor:context-menu; 
+    }
+    a[href="#lv1"]:after { 
+        content: url(%%lv1%%);
+        cursor:context-menu;
+    }
+    a[href="#lv2"]:after { 
+        content: url(%%lv2%%);
+        cursor:context-menu; 
+    }
+    a[href="#lv3"]:after { 
+        content: url(%%lv3%%);
+        cursor:context-menu; 
+    }
+    a[href="#lv4"]:after { 
+        content: url(%%lv4%%);
+        cursor:context-menu; 
+    }
+    a[href="#alum"]:after { 
+        content: url(%%alum%%);
+        cursor:context-menu; 
+    }
+
+/************************************************************************************
+** Stickied Post Formatting
+************************************************************************************/
+
+.stickied {
+    background-color: none;
+}
+
+.stickied .title {
+    color: #FC700C  !important;
+}
+
+.stickied-tagline {
+    background-color: #96bf43;
+    color: white!important;
+    text-transform: uppercase;
+}
+
+/************************************************************************************
+** Submission Page (Link and Text Submission form)
+************************************************************************************/
+
+/* Content box inside the submission page */
+    .submit-page .content[role=main] {
+        background-color: white;
+        padding: 15px;
+
+        border: 1px solid #e5e5e5 ;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+
+        -webkit-box-shadow: 0px 0px 49px 0px rgba(209,209,209,1);
+        -moz-box-shadow: 0px 0px 49px 0px rgba(209,209,209,1);
+        box-shadow: 0px 0px 49px 0px rgba(209,209,209,1);
+    }
+
+/* Tab menu */
+    .submit-page .content[role=main] ul.tabmenu.formtab {
+        background-color: transparent;
+        margin-left: 0px;
+    }
+
+/* the tabs */
+    .submit-page .content[role=main] ul.tabmenu.formtab a{
+        font-weight: medium;
+        border: 0px solid gray;
+        background-color: gray;
+        color: white;
+        margin-left: 5px;
+        margin-right: 5px;
+
+        border-radius: 3px 3px 0px 0px;
+        -moz-border-radius: 3px 3px 0px 0px;
+        -webkit-border-radius: 3px 3px 0px 0px;
+    }
+
+/* the tab that is active */
+    .submit-page .content[role=main] ul.tabmenu.formtab .selected a{
+        background-color: #FC700C;
+        color: white;
+    }
+
+/* everything below the tab menu */
+    .submit-page .content[role=main] .formtabs-content {
+        border-top: 4px solid gray;
+        padding-top: 10px;
+        width: 520px;
+    }
+
+
